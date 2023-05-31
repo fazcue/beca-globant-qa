@@ -19,7 +19,10 @@ public class Ej_12_dispositivoRS232 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        dispositivoRS232();
+    }
+    
+    static void dispositivoRS232() {
         int totalValid = 0;
         int totalInvalid = 0;
         String sequence;
@@ -42,14 +45,14 @@ public class Ej_12_dispositivoRS232 {
         System.out.println("Total invalid: " + totalInvalid);
     }
     
-    public static String getSequence() {
+    static String getSequence() {
         System.out.println("Ingresa una secuencia: ");
         String sequence = leer.nextLine();
         
         return sequence;
     }
     
-    public static boolean isValid(String sequence) {
+    static boolean isValid(String sequence) {
         boolean isValid = true;
         
         int sequenceLong = sequence.length();

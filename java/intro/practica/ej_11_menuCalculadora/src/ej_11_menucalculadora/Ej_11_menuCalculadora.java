@@ -13,13 +13,12 @@ import java.util.Scanner;
  */
 public class Ej_11_menuCalculadora {
     
-    public static Scanner leer = new Scanner(System.in);
+    static Scanner leer = new Scanner(System.in);
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         int num1 = getPositiveNum();
         int num2 = getPositiveNum();
         
@@ -103,6 +102,6 @@ public class Ej_11_menuCalculadora {
         System.out.print("¿Está seguro que desea salir del programa (S/N)? ");
         String res = leer.next();
         
-        return !res.toUpperCase().equals("S");
+        return !res.equalsIgnoreCase("S");
     }
 }

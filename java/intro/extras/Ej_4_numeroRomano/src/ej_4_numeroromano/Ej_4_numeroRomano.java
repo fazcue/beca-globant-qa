@@ -18,10 +18,10 @@ public class Ej_4_numeroRomano {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        int num = getNumBetween1and10();
         
+        int num = getNumBetween1and10();
         convertToRoman(num);
+        
     }
     
     public static int getNumBetween1and10() {
@@ -41,38 +41,26 @@ public class Ej_4_numeroRomano {
     
     public static void convertToRoman(int num) {
         String romanNumber = "";
+        int rest = num;
         
-        switch (num) {
-            case 1:
-                romanNumber = "I";
-                break;
-            case 2:
-                romanNumber = "II";
-                break;
-            case 3:
-                romanNumber = "III";
-                break;
-            case 4:
-                romanNumber = "IV";
-                break;
-            case 5:
-                romanNumber = "V";
-                break;
-            case 6:
-                romanNumber = "VI";
-                break;
-            case 7:
-                romanNumber = "VII";
-                break;
-            case 8:
-                romanNumber = "VIII";
-                break;
-            case 9:
-                romanNumber = "IX";
-                break;
-            case 10:
-                romanNumber = "X";
-                break;
+        //Valor inicial | rest: max number - num
+        if (num > 7) {
+            romanNumber = "X";
+            rest = 10 - num;
+        } else if (num > 3) {
+            romanNumber= "V";
+            rest = 5 - num;
+        }
+        
+        //Si el resto es negativo, concatenar LUEGO del valor inicial. Sino ANTES
+        if (rest < 0) {
+            for (int i = 0; i < -rest; i++) {
+                romanNumber += "I";
+            }
+        } else {
+            for (int i = 0; i < rest; i++) {
+                romanNumber = "I" + romanNumber;
+            }
         }
         
         System.out.println(num + " en romano: " + romanNumber);

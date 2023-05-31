@@ -47,14 +47,14 @@ public class Ej_19_matrizAntisimetrica {
         
         for (int i = 0; i < longMatrix; i++) {
             for (int j = 0; j < longMatrix; j++) {
-                
                 if (matrix[i][j] != -matrix[j][i]) {
                     antiSymmetric = false;
                     break;
                 }
-                if (!antiSymmetric) {
-                    break;
-                }
+            }
+            
+            if (!antiSymmetric) {
+                break;
             }
         }
         

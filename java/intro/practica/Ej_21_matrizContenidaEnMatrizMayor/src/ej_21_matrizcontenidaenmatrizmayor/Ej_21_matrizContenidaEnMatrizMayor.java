@@ -20,7 +20,7 @@ public class Ej_21_matrizContenidaEnMatrizMayor {
         int[][] matrixA = new int[longMatrixA][longMatrixA];
         
         int longMatrixB = 3;
-        int[][] matrixB = {{23, 24, 25}, {33, 34, 35}, {43, 44, 45}};
+        int[][] matrixB = {{27, 28, 29}, {37, 38, 39}, {47, 48, 49}};
         
         fillMatrix(matrixA, longMatrixA);
         
@@ -72,7 +72,7 @@ public class Ej_21_matrizContenidaEnMatrizMayor {
         int firstJ = -1;
         
         for (int i = 0; i < longMatrixA; i++) {
-            for (int j = 0; j < longMatrixA; j++) {
+            for (int j = 0; j < longMatrixA - longMatrixB + 1; j++) {
                 
                 //Si coincide con 1er elemento en matrizB...
                 if (matrixA[i][j] == matrixB[0][0]) {
@@ -81,10 +81,11 @@ public class Ej_21_matrizContenidaEnMatrizMayor {
                     firstI = i;
                     firstJ = j;
                     
-                    //recorrer matrizB
+                    //recorrer matrizB...
                     for (int k = 0; k < longMatrixB; k++) {
                         for (int l = 0; l < longMatrixB; l++) {
                             
+                            //Si no coincide uno de los elementos, entonces NO se encuenta
                             if (matrixB[k][l] != matrixA[i + k][j + l]) {
                                 isBinA = false;
                                 break;
@@ -92,11 +93,13 @@ public class Ej_21_matrizContenidaEnMatrizMayor {
                             
                         }
                         
+                        //Si un elemento de la fila no coincidió, entonces salir
                         if (!isBinA) {
                             break;
                         }
                     }
                     
+                    //Si la matriz fue encontrada, entonces salir
                     if (isBinA) {
                         break;
                     }
