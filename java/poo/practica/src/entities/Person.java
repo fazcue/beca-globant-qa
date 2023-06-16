@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package entities;
+
+import java.time.LocalDate;
 
 /**
  *
@@ -11,24 +8,24 @@ package entities;
  */
 public class Person {
     private String name;
-    private int age;
+//    private int age; //Modificado por ejercicio 12
     private char sex;
-    private double height;
     private double weight;
-    private int id;
-    private static int count = 0;
+    private double height;
+    //Extra ejercicio 12
+    private LocalDate birthDate;
 
     public Person() {
-        id = (int) (Math.random() * 1000000);
-        count++;
     }
 
-    public Person(String name, int age, char sex, double height, double weight) {
+    //Modificado por ejercicio 12
+    public Person(String name, char sex, double height, double weight, LocalDate birthDate) {
         this.name = name;
-        this.age = age;
+//        this.age = age;
         this.sex = sex;
         this.height = height;
         this.weight = weight;
+        this.birthDate = birthDate;
     }
 
     public String getName() {
@@ -39,6 +36,7 @@ public class Person {
         this.name = name;
     }
 
+    /* Modificado por ejercicio 12
     public int getAge() {
         return age;
     }
@@ -46,6 +44,7 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
+*/
 
     public char getSex() {
         return sex;
@@ -71,19 +70,11 @@ public class Person {
         this.weight = weight;
     }
 
-    public int getId() {
-        return id;
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public static int getCount() {
-        return count;
-    }
-
-    public static void setCount(int count) {
-        Person.count = count;
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
     }
 }

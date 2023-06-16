@@ -6,6 +6,8 @@
 package services;
 
 import entities.Person;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Scanner;
 
 /**
@@ -18,14 +20,15 @@ public class PersonService {
     public Person create() {
         Person p1 = new Person();
         
-        System.out.println("Datos de la persona");
-        System.out.println("---------------");
-        
         System.out.print("Nombre: ");
         p1.setName(scanner.next());
         
-        System.out.print("Edad: ");
-        p1.setAge(scanner.nextInt());
+        //Modificado por ejercicio 12
+//        System.out.print("Edad: ");
+//        p1.setAge(scanner.nextInt());
+
+        System.out.print("Fecha de nacimiento (YYYY-MM-DD): ");
+        p1.setBirthDate(LocalDate.parse(scanner.next()));
         
         char sex;
         do {
@@ -35,7 +38,6 @@ public class PersonService {
             if (sex != 'H' && sex != 'M' && sex != 'O') {
                 System.out.println("Sexo inválido. Opciones: H: hombre, M: mujer, O: otro");
             }
-            
         } while (sex != 'H' && sex != 'M' && sex != 'O');
         p1.setSex(sex);
 
@@ -45,7 +47,6 @@ public class PersonService {
         System.out.print("Peso: ");
         p1.setWeight(scanner.nextDouble());
         
-        System.out.println("---------------");
         System.out.println("");
         
         return p1;
@@ -66,6 +67,32 @@ public class PersonService {
     }
     
     public boolean isAdult(Person p1) {
-        return p1.getAge() >= 18;
+        
+        //Modificado por ejercicio 12
+//        return p1.getAge() >= 18;
+        Period age = Period.between(p1.getBirthDate(), LocalDate.now());
+
+        
+        return age.getYears() >= 18;
+    }
+    
+    //Extra ejercicio 12
+    public int age(Person p1) {
+        Period p = Period.between(p1.getBirthDate(), LocalDate.now());
+        
+        return p.getYears();
+    } 
+    
+    public boolean isYoungerThan(Person p1, int age) {
+        int p1Age = age(p1);
+        
+        return p1Age < age;
+    }
+    
+    public void print(Person p1) {
+        System.out.println("Nombre: " + p1.getName());
+        System.out.println("Fecha de nacimimiento: " + p1.getBirthDate());
+        System.out.println("Edad: " + age(p1));
+        System.out.println("");
     }
 }

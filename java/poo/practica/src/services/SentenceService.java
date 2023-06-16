@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package services;
 
 import entities.Sentence;
@@ -22,24 +17,26 @@ public class SentenceService {
         s1.setPhrase(scanner.next());
         s1.setPhraseLong(s1.getPhrase().length());
         
+        System.out.println("");
+        
         return s1;
     }
     
     public void totalVowels(Sentence s1) {
+        char[] vowels = {'a', 'e', 'i', 'o', 'u'};
         int total = 0;
         
-//        for (int i = 0; i < s1.getPhraseLong(); i++) {
-//            char letter = s1.getPhrase().toLowerCase().charAt(i);
-//            
-//            if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u') {
-//                total++;
-//            }
-//        }
-        
+        //Para cada letra...
         for (char letter : s1.getPhrase().toLowerCase().toCharArray()) {
-            if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u') {
-                total++;
+            
+            //Comparar con vocales
+            for (char vowel : vowels) {
+                if (letter == vowel) {
+                    total++;
+                    break;
+                }
             }
+            
         }
         
         System.out.println("Total de vocales: " + total);
@@ -84,8 +81,11 @@ public class SentenceService {
         System.out.println("");
     }
     
-    public void join(Sentence s1, String sentence) {
-        System.out.println(s1.getPhrase() + sentence);
+    public void join(Sentence s1, String extraPhrase) {
+        s1.setPhrase(s1.getPhrase() + extraPhrase);
+        s1.setPhraseLong(s1.getPhrase().length());
+        
+        System.out.println(s1.getPhrase());
         System.out.println("");
     }
     

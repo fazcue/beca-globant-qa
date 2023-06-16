@@ -30,8 +30,6 @@ public class OperationService {
         System.out.println("-----------");
         System.out.println("");
         
-        scanner.close();
-        
         return c1;
     }
     

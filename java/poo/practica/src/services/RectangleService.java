@@ -45,7 +45,7 @@ public class RectangleService {
         System.out.printf("Perimetro: %.2f\n", res);
     }
     
-    public void printRectangle(Rectangle r1) {
+    public void draw(Rectangle r1) {
         for (int i = 0; i < r1.getHeight(); i++) {
             for (int j = 0; j < r1.getBase(); j++) {
                 

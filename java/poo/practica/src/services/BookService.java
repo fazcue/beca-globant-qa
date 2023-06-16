@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class BookService {
     Scanner scanner = new Scanner(System.in).useDelimiter("\n");
     
-    public Book newBook() {
+    public Book create() {
         Book b1 = new Book();
         
         System.out.println("Nuevo libro");
@@ -36,12 +36,10 @@ public class BookService {
         System.out.println("-------------");
         System.out.println("");
         
-        scanner.close();
-        
         return b1;
     }
     
-    public void printBook(Book b1) {
+    public void print(Book b1) {
         System.out.println("libro '" + b1.getTitle() + "'");
         System.out.println("-------------");
         System.out.println("Autor: " + b1.getAuthor());    
