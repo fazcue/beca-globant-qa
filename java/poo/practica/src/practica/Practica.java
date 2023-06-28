@@ -47,10 +47,10 @@ public class Practica {
 //        ejercicio8();
 //        ejercicio9();
 //        ejercicio10();
-//        ejercicio11();
+        ejercicio11();
 //        ejercicio12();
 //        ejercicio13();
-        ejercicio14();
+//        ejercicio14();
     }
     
     public static void ejercicio1() {
