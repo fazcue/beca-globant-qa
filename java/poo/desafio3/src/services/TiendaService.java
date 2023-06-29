@@ -127,6 +127,7 @@ public class TiendaService {
             for (int i = 0; i < totalPeliculas; i++) {
                 if (peliculas[i].getTitulo().equalsIgnoreCase(peliculaABuscar)) {
                     System.out.println(peliculas[i]);
+                    System.out.println("");
                     return;
                 }
             }
@@ -205,7 +206,7 @@ public class TiendaService {
                 total += alquiladas[i].getPrecio();
             }
             
-            System.out.printf("El total de ingreso hasta la fecha es: $%.2f", total);
+            System.out.printf("El total de ingreso hasta la fecha es: $%.2f\n", total);
         } else {
             System.out.println("No se han cargado alquileres aún");
         }
