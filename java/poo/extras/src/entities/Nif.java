@@ -1,7 +1,5 @@
 package entities;
 
-import java.util.Scanner;
-
 /**
  *
  * @author facu

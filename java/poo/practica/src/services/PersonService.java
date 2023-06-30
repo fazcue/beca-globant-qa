@@ -81,7 +81,7 @@ public class PersonService {
         Period p = Period.between(p1.getBirthDate(), LocalDate.now());
         
         return p.getYears();
-    } 
+    }
     
     public boolean isYoungerThan(Person p1, int age) {
         int p1Age = age(p1);

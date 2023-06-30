@@ -19,7 +19,7 @@ public class NifService {
         nif.setDni(scanner.nextInt());
 
         int resto = (int) nif.getDni() % 23;
-        nif.setLetter(letters[(int) resto]);
+        nif.setLetter(letters[resto]);
         
         return nif;
     }

@@ -22,9 +22,9 @@ public class Extras {
         // TODO code application logic here
 //        ejercicio2();
 //        ejercicio3();
-//        ejercicio4();
+        ejercicio4();
 //        ejercicio5();
-        ejercicio6();
+//        ejercicio6();
     }
     
     public static void ejercicio2() {
@@ -46,7 +46,6 @@ public class Extras {
         //Ecuacion con 1 solucion
         Roots root2 = new Roots(2, -4, 2);
 
-        
         System.out.println("Ecuación con 1 solución: ");
         root2.calculate();
         System.out.println("");

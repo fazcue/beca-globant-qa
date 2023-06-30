@@ -64,20 +64,12 @@ public class Roots {
     }
     
     public void getRoots() {
-        if (hasRoots()) {
-            System.out.println("Solución 1: " + calculateRoot(1));
-            System.out.println("Solución 2: " + calculateRoot(-1));
-        } else {
-            System.out.println("No existen 2 soluciones");
-        }
+        System.out.println("Solución 1: " + calculateRoot(1));
+        System.out.println("Solución 2: " + calculateRoot(-1));
     }
     
     public void getRoot() {
-        if (hasRoot()) {
-            System.out.println("Solución: " + calculateRoot(1));
-        } else {
-            System.out.println("No existe solución única.");
-        }
+        System.out.println("Solución: " + calculateRoot(1));
     }
     
     public void calculate() {
